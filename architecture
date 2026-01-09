@@ -1,1 +1,4 @@
+Files: hosts (hosts inventory) and playbook (with tasks using ansible module)
+Allow imperative or declarative way (desired state of system)
 
+Roles
