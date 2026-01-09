@@ -1,0 +1,22 @@
+
+- hosts: webservers
+  vars:
+    http_port: 80
+    max_clients: 200
+  tasks:
+  - name: ensure apache is at the latest version using yum module
+    yum:
+      name: httpd
+      state: latest
+  - name: write the apache config file using template module (copy files)
+    template:
+      src: /srv/httpd.j2
+      dest: /etc/httpd.conf
+      
+    notify:
+    - restart apache
+  handlers:
+  - name: restart apache - based on notify
+    service:
+      name: httpd
+      state: restarted
