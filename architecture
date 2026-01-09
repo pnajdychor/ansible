@@ -1,4 +1,9 @@
 Files: hosts (hosts inventory) and playbook (with tasks using ansible module)
 Allow imperative or declarative way (desired state of system)
 
-Roles
+Roles (equivalent packages in programming) should be idempotence (running the same (e.g. DB script) a couple timesdoesn't change the system state)
+https://galaxy.ansible.com
+Could be taken from requirements.yml with git repo.
+
+Ansible-lint (tool compares code to best practices)
+
